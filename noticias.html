@@ -85,6 +85,27 @@
       <div id="newsGrid" class="row row-cols-1 row-cols-md-2 g-4"></div>
     </div>
   </section>
+  
+  <!-- MODAL NOTICIA -->
+<div class="modal fade" id="newsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header">
+        <div>
+          <span id="newsModalTag" class="badge text-bg-info mb-2">Categoría</span>
+          <h5 class="modal-title" id="newsModalTitle">Título de la noticia</h5>
+          <div class="small text-muted" id="newsModalDate"></div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="newsModalBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sanflo" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- FOOTER -->
   <footer class="bg-dark text-white text-center p-4">
