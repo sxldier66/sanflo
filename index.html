@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Sanflo SRL - Cotización de insumos médicos, productos de higiene y servicios de mantenimiento en Santo Domingo.">
+    <meta name="keywords" content="insumos médicos, guantes, mascarillas, mantenimiento, multiservice, cotización">
+    <meta name="author" content="Sanflo SRL">
+
+    <title>Sanflo SRL | Multiservice Médico</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+    <link rel="shortcut icon" href="assets/icons/favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-sanflo sanflo-nav">
+  <div class="container sanflo-nav-inner">
+    <a class="navbar-brand d-flex align-items-center gap-2 sanflo-brand" href="index.html">
+      <img src="assets/img/logo-blanco.png" alt="Sanflo SRL" height="40">
+      <span class="fw-bold text-white">Sanflo SRL</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link sanflo-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link sanflo-link" href="noticias.html">Noticias</a></li>
+        <li class="nav-item"><a class="nav-link sanflo-link" href="enlaces.html">Enlaces</a></li>
+        <li class="nav-item"><a class="nav-link sanflo-link" href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- Carrito (solo index lo necesita, si quieres se lo agregamos a todas luego) -->
+      <button class="btn btn-light ms-3 position-relative sanflo-iconbtn">
+        <i class="bi bi-cart"></i>
+        <span data-cart-badge class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
+      </button>
+
+      <!-- Dark mode -->
+      <button id="themeToggle" class="btn btn-outline-light ms-2 sanflo-iconbtn">
+        <i data-theme-icon class="bi bi-sun-fill"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="py-5 text-center bg-light">
+  <div class="container">
+    <div class="hero-logo mb-4">
+  <img src="assets/img/logo-completo.png" alt="Sanflo SRL">
+  </div>
+    <h1 class="hero-title fw-bold text-sanflo">Multiservice en Insumos Médicos y Mantenimiento</h1>
+    <p class="lead">Cotiza fácil, rápido y con validación de stock en tiempo real</p>
+    <a href="#catalogo" class="btn btn-sanflo btn-lg mt-3">
+      <i class="bi bi-cart-plus"></i> Comenzar Cotización
+    </a>
+  </div>
+</section>
+
+<!-- CARRUSEL -->
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+
+    <div class="carousel-inner">
+
+  <!-- Slide 1 -->
+  <div class="carousel-item active">
+    <div class="sanflo-slide sanflo-slide-1 d-flex flex-column justify-content-center text-center text-white p-5">
+      <h3 class="fw-bold text-shadow">Insumos Médicos</h3>
+      <p class="mb-0 text-shadow">Guantes, mascarillas, batas y más</p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="carousel-item">
+    <div class="sanflo-slide sanflo-slide-2 d-flex flex-column justify-content-center text-center text-white p-5">
+      <h3 class="fw-bold text-shadow">Productos de Higiene</h3>
+      <p class="mb-0 text-shadow">Alcohol, gel antibacterial, papel toalla</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="carousel-item">
+    <div class="sanflo-slide sanflo-slide-3 d-flex flex-column justify-content-center text-center text-white p-5">
+      <h3 class="fw-bold text-shadow">Servicios de Mantenimiento</h3>
+      <p class="mb-0 text-shadow">Limpieza profunda y soporte técnico</p>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- LISTAS (Requisito del documento) -->
+<section class="py-5 section-soft">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Pasos para Cotizar</h4>
+        <ol>
+          <li>Selecciona los productos</li>
+          <li>Agrega al carrito</li>
+          <li>Genera tu cotización</li>
+        </ol>
+      </div>
+      <div class="col-md-6">
+        <h4>Servicios Disponibles</h4>
+        <ul>
+          <li>Mantenimiento de aire</li>
+          <li>Limpieza profunda</li>
+          <li>Fumigación</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Catálogo de Productos y Servicios</h2>
+    <div id="catalogGrid" class="row row-cols-1 row-cols-md-3 g-4"></div>
+  </div>
+</section>
+
+<!-- OFFCANVAS CARRITO -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas">
+  <div class="offcanvas-header">
+    <h5>Cotización</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="cartItems"></div>
+    <div id="cartTotals" class="mt-4"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert">
+    <div class="toast-header">
+      <strong class="me-auto" id="toastTitle">Notificación</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    </div>
+    <div class="toast-body" id="toastMsg"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center p-4">
+  <p>© 2026 Sanflo SRL | RNC 131-207-131</p>
+  <a href="privacidad.html" class="text-white">Políticas de Privacidad</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/cotizador.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

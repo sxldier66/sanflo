@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Contacto Sanflo SRL - Cotización de insumos médicos y multiservicios">
+  <meta name="keywords" content="contacto sanflo, whatsapp sanflo, correo sanflo, cotizar insumos">
+  <meta name="author" content="Sanflo SRL">
+
+  <title>Contacto | Sanflo SRL</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+  <link rel="shortcut icon" href="assets/icons/favicon.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR (PILL) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sanflo-nav">
+    <div class="container sanflo-nav-inner">
+
+      <a class="navbar-brand d-flex align-items-center gap-2 sanflo-brand" href="index.html">
+        <img src="assets/img/logo-blanco.png" alt="Sanflo SRL" height="40">
+        <span class="fw-bold text-white">Sanflo SRL</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link sanflo-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link sanflo-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link sanflo-link" href="enlaces.html">Enlaces</a></li>
+          <li class="nav-item"><a class="nav-link sanflo-link active" href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <button id="themeToggle" class="btn btn-outline-light ms-3 sanflo-iconbtn" type="button" aria-label="Cambiar tema">
+          <i data-theme-icon class="bi bi-sun-fill"></i>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="py-5 text-center bg-light">
+    <div class="container">
+      <h1 class="fw-bold text-sanflo">Contáctanos</h1>
+      <p class="lead">Escríbenos para cotizar o solicitar un servicio</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- INFO -->
+        <div class="col-lg-5">
+          <div class="card rounded-4 hover-lift h-100">
+            <div class="card-body">
+              <h4 class="fw-bold mb-3">Sanflo SRL</h4>
+
+              <p class="mb-2"><i class="bi bi-envelope text-sanflo"></i> sanflosrl@gmail.com</p>
+              <p class="mb-2"><i class="bi bi-whatsapp text-sanflo"></i> 829-567-6383</p>
+              <p class="mb-2"><i class="bi bi-instagram text-sanflo"></i> @sanflo.srl</p>
+              <p class="mb-3"><i class="bi bi-file-earmark-text text-sanflo"></i> RNC: 131-207-131</p>
+
+              <!-- MAILTO (requisito) -->
+              <a class="btn btn-sanflo w-100 mb-2"
+                 href="mailto:sanflosrl@gmail.com?subject=Cotización%20Sanflo%20SRL&body=Hola%20Sanflo%2C%20quiero%20una%20cotización...">
+                <i class="bi bi-envelope-paper"></i> Enviar correo (mailto)
+              </a>
+
+              <!-- WHATSAPP -->
+              <a class="btn btn-outline-success w-100"
+                 href="https://wa.me/18295676383"
+                 target="_blank"
+                 rel="noopener">
+                <i class="bi bi-whatsapp"></i> Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="col-lg-7">
+          <div class="card rounded-4 hover-lift">
+            <div class="card-body">
+              <h4 class="fw-bold mb-3">Formulario (demo)</h4>
+
+              <div id="formAlert" class="alert d-none" role="alert"></div>
+
+              <form id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="829-000-0000">
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="correo" placeholder="tu@email.com">
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="4" placeholder="¿Qué deseas cotizar o solicitar?"></textarea>
+                  </div>
+
+                  <div class="col-12 d-grid">
+                    <button type="submit" class="btn btn-sanflo btn-lg">
+                      <i class="bi bi-send"></i> Enviar
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <p class="small text-muted mt-3 mb-0">
+                *Este formulario es demostrativo (no envía a servidor). Muestra alertas usando JavaScript.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL PRIVACIDAD -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header">
+          <h5 class="modal-title">Políticas de Privacidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Sanflo SRL utiliza los datos proporcionados únicamente para responder solicitudes de cotización y contacto.
+            No compartimos información con terceros sin autorización.
+          </p>
+          <ul>
+            <li>Datos usados: nombre, correo, teléfono y mensaje.</li>
+            <li>Uso: responder contacto/cotización.</li>
+            <li>Seguridad: medidas básicas para proteger la información.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="privacidad.html" class="btn btn-outline-secondary">Ver página completa</a>
+          <button type="button" class="btn btn-sanflo" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center p-4">
+    <p class="mb-2">© 2026 Sanflo SRL | Santo Domingo</p>
+    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#privacyModal">
+      Ver Políticas de Privacidad
+    </button>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- JS inline SOLO para el formulario (alertas con JS) -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const alertBox = document.getElementById('formAlert');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if (!nombre || !correo || !mensaje) {
+        alertBox.className = "alert alert-danger";
+        alertBox.textContent = "⚠️ Por favor completa Nombre, Correo y Mensaje.";
+        alertBox.classList.remove("d-none");
+        return;
+      }
+
+      alertBox.className = "alert alert-success";
+      alertBox.textContent = "✅ Mensaje enviado (demo). Pronto te contactaremos.";
+      alertBox.classList.remove("d-none");
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

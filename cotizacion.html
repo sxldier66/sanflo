@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Cotización imprimible - Sanflo SRL">
+  <meta name="keywords" content="cotización, factura, sanflo srl, itbis 18%">
+  <meta name="author" content="Sanflo SRL">
+
+  <title>Cotización | Sanflo SRL</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon.png">
+  <link rel="shortcut icon" href="assets/icons/favicon.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Ajustes para impresión */
+    @media print{
+      .no-print{display:none !important;}
+      body{background:#fff !important; color:#000 !important;}
+      .card{box-shadow:none !important;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR (no se imprime) - PILL -->
+  <nav class="navbar navbar-expand-lg navbar-dark sanflo-nav no-print">
+    <div class="container sanflo-nav-inner">
+
+      <a class="navbar-brand d-flex align-items-center gap-2 sanflo-brand" href="index.html">
+        <img src="assets/img/logo-blanco.png" alt="Sanflo SRL" height="38">
+        <span class="fw-bold text-white">Sanflo SRL</span>
+      </a>
+
+      <div class="ms-auto d-flex gap-2">
+        <a href="index.html" class="btn btn-outline-light btn-sm sanflo-iconbtn">
+          <i class="bi bi-house"></i> Inicio
+        </a>
+        <button id="themeToggle" class="btn btn-outline-light btn-sm sanflo-iconbtn" type="button" aria-label="Cambiar tema">
+          <i data-theme-icon class="bi bi-sun-fill"></i>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <section class="py-5">
+    <div class="container">
+      <div class="card rounded-4">
+        <div class="card-body p-4 p-md-5">
+
+          <!-- HEADER EMPRESA -->
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
+            <div>
+              <h2 class="fw-bold text-sanflo mb-1">Sanflo SRL</h2>
+              <div class="text-muted">Multiservice · Insumos médicos · Higiene · Mantenimiento</div>
+              <div class="small text-muted mt-2">
+                <div><i class="bi bi-envelope"></i> sanflosrl@gmail.com</div>
+                <div><i class="bi bi-whatsapp"></i> 829-567-6383</div>
+                <div><i class="bi bi-instagram"></i> @sanflo.srl</div>
+                <div><i class="bi bi-file-earmark-text"></i> RNC: 131-207-131</div>
+              </div>
+            </div>
+
+            <div class="text-md-end">
+              <div class="badge text-bg-dark fs-6 mb-2" id="quoteNumber">COT-YYYYMMDD-XXX</div>
+              <div class="text-muted">
+                <i class="bi bi-calendar-event"></i> <span id="quoteDate"></span>
+              </div>
+              <div class="mt-3 no-print">
+                <button class="btn btn-sanflo" onclick="window.print()">
+                  <i class="bi bi-printer"></i> Imprimir / Guardar PDF
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- DATOS CLIENTE -->
+          <h4 class="fw-bold mb-3">Datos del Cliente</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Nombre / Empresa</label>
+              <input type="text" class="form-control" id="clienteNombre" placeholder="Ej: Clínica ABC">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="clienteTel" placeholder="829-000-0000">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Correo</label>
+              <input type="email" class="form-control" id="clienteEmail" placeholder="cliente@email.com">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">RNC (opcional)</label>
+              <input type="text" class="form-control" id="clienteRnc" placeholder="Opcional">
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- DETALLE -->
+          <h4 class="fw-bold mb-3">Detalle de Cotización</h4>
+
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th class="text-center">Cant.</th>
+                  <th class="text-end">Precio</th>
+                  <th class="text-end">Importe</th>
+                </tr>
+              </thead>
+              <tbody id="quoteTable"></tbody>
+            </table>
+          </div>
+
+          <!-- TOTALES -->
+          <div class="row justify-content-end">
+            <div class="col-md-6">
+              <div class="p-3 rounded-4 section-soft">
+                <div class="d-flex justify-content-between">
+                  <span>Subtotal</span>
+                  <span class="fw-semibold" id="subtotal">RD$0</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>ITBIS (18%)</span>
+                  <span class="fw-semibold" id="itbis">RD$0</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between fs-5">
+                  <span class="fw-semibold">Total</span>
+                  <span class="fw-bold text-sanflo" id="total">RD$0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTONES -->
+          <div class="d-flex flex-column flex-md-row gap-2 mt-4 no-print">
+            <a class="btn btn-outline-secondary" href="index.html">
+              <i class="bi bi-arrow-left"></i> Volver al catálogo
+            </a>
+            <button class="btn btn-outline-danger" id="btnVaciar" type="button">
+              <i class="bi bi-trash"></i> Vaciar cotización
+            </button>
+            <button class="btn btn-sanflo ms-md-auto" id="btnGenerarNum" type="button">
+              <i class="bi bi-hash"></i> Generar número de cotización
+            </button>
+          </div>
+
+          <p class="small text-muted mt-3 mb-0">
+            *Esta cotización es demostrativa para fines académicos. Los precios pueden variar.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/cotizador.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    function renderQuote(){
+      const cart = (function(){
+        try{ return JSON.parse(localStorage.getItem('sanflo_cart_v1')) || []; }
+        catch{ return []; }
+      })();
+
+      const tbody = document.getElementById('quoteTable');
+
+      if(cart.length === 0){
+        tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-4">No hay items en la cotización.</td></tr>`;
+        document.getElementById('subtotal').textContent = 'RD$0';
+        document.getElementById('itbis').textContent = 'RD$0';
+        document.getElementById('total').textContent = 'RD$0';
+        return;
+      }
+
+      tbody.innerHTML = cart.map(line => {
+        const item = findItemById(line.id);
+        if(!item) return '';
+        const imp = item.precio * line.qty;
+        return `
+          <tr>
+            <td>
+              <div class="fw-semibold">${item.nombre}</div>
+              <div class="small text-muted">${item.categoria}</div>
+            </td>
+            <td class="text-center">${line.qty}</td>
+            <td class="text-end">${money(item.precio)}</td>
+            <td class="text-end fw-semibold">${money(imp)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      const totals = calcTotals(cart);
+      document.getElementById('subtotal').textContent = money(totals.subtotal);
+      document.getElementById('itbis').textContent = money(totals.itbis);
+      document.getElementById('total').textContent = money(totals.total);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Fecha
+      const now = new Date();
+      document.getElementById('quoteDate').textContent =
+        now.toLocaleDateString('es-DO', { year:'numeric', month:'long', day:'2-digit' });
+
+      // Número (se genera con botón)
+      document.getElementById('quoteNumber').textContent = 'COT-YYYYMMDD-XXX';
+
+      renderQuote();
+
+      document.getElementById('btnVaciar').addEventListener('click', () => {
+        localStorage.setItem('sanflo_cart_v1', JSON.stringify([]));
+        renderQuote();
+        alert('Cotización vaciada.');
+      });
+
+      document.getElementById('btnGenerarNum').addEventListener('click', () => {
+        document.getElementById('quoteNumber').textContent = nextQuoteNumber();
+      });
+    });
+  </script>
+
+</body>
+</html>
